@@ -1,0 +1,7 @@
+[package]
+name = "partcad-csgrs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+csgrs = { git = "https://github.com/timschmidt/csgrs.git" }
