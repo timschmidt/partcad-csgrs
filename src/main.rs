@@ -1,12 +1,14 @@
 use std::fs::File;
 use std::io::Write;
 
+mod partcad; // Link the `partcad.rs` file as a module
+
 fn main() {
-    // Replace the default CSG object (a cube) with any valid CSG object.
-    let csg_object = csgrs::CSG::cube(None); // Example: Replace with csgrs::CSG::sphere(1.0);
+    // Use the CSG object defined in the external file
+    let part = partcad::part();
 
     // Generate STL data
-    let stl_data = csg_object.to_stl("PartCAD part");
+    let stl_data = part.to_stl("PartCAD part");
 
     // Write the STL file
     let filename = "output.stl";
